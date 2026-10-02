@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: transparent;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.tablet-container {
+    width: 800px;
+    height: 600px;
+    background: #1a1b21;
+    border-radius: 16px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #2d2e36;
+    overflow: hidden;
+    position: relative;
+    animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.header {
+    background: #131418;
+    padding: 24px;
+    text-align: center;
+    border-bottom: 2px solid #ffcc00;
+    position: relative;
+}
+
+.header h2 {
+    color: #ffcc00;
+    font-size: 24px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.header p {
+    color: #8b8d98;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: none;
+    border: none;
+    color: #8b8d98;
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-btn:hover {
+    color: #ff4757;
+}
+
+.content {
+    padding: 24px;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+/* Custom Scrollbar */
+.content::-webkit-scrollbar { width: 8px; }
+.content::-webkit-scrollbar-track { background: #131418; }
+.content::-webkit-scrollbar-thumb { background: #3d3f4a; border-radius: 4px; }
+
+.waypoint-card {
+    background: #23252d;
+    border: 2px dashed #3d3f4a;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.waypoint-card:hover {
+    border-color: #ffcc00;
+    background: #2a2c36;
+}
+
+.waypoint-card .icon-box {
+    background: #ffcc00;
+    color: #1a1b21;
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.waypoint-card .details h3 {
+    color: #fff;
+    font-size: 16px;
+}
+
+.waypoint-card .details p {
+    color: #8b8d98;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+.divider {
+    text-align: center;
+    margin: 24px 0;
+    position: relative;
+}
+
+.divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #2d2e36;
+    z-index: 1;
+}
+
+.divider span {
+    background: #1a1b21;
+    padding: 0 12px;
+    color: #555761;
+    font-size: 12px;
+    font-weight: 600;
+    position: relative;
+    z-index: 2;
+}
+
+.destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.dest-card {
+    background: #23252d;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid #2d2e36;
+    transition: all 0.2s;
+}
+
+.dest-card:hover {
+    border-color: #ffcc00;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.dest-card img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+}
+
+.dest-info {
+    padding: 16px;
+}
+
+.dest-info h3 {
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.dest-info p {
+    color: #8b8d98;
+    font-size: 13px;
+}

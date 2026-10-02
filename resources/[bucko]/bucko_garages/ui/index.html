@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Bucko Garages</title>
+</head>
+<body class="hidden w-screen h-screen flex items-center justify-center bg-transparent" id="app">
+    
+    <!-- ADMIN TABLET (Hidden by default) -->
+    <div id="adminTablet" class="np-tablet hidden flex-col relative">
+        <div class="np-header flex justify-between items-center w-full px-6 py-4">
+            <h1 class="text-white text-xl uppercase tracking-widest font-bold">Garage <span class="text-[#00ffaa]">Tool</span></h1>
+            <button class="closeBtn text-white hover:text-[#00ffaa] transition-colors duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        <div class="p-6 bg-[#1e2025]">
+            <form id="garageForm" class="space-y-4">
+                <div class="form-control"><label>Identifier</label><input type="text" id="gName" placeholder="mrpd_main" required></div>
+                <div class="form-control"><label>Label</label><input type="text" id="gLabel" placeholder="Mission Row PD" required></div>
+                <div class="form-control"><label>Class</label><select id="gType"><option value="car">Car / Truck</option></select></div>
+                <button type="submit" class="np-btn w-full mt-2">Create Garage Zone</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- PLAYER GARAGE UI (Jam Packed) -->
+    <div id="playerGarage" class="hidden player-ui relative w-[900px] h-[550px] flex">
+        
+        <!-- Sidebar: Vehicle List -->
+        <div class="w-1/3 bg-[#141518] border-r border-[#2a2c33] flex flex-col">
+            <div class="p-5 border-b border-[#2a2c33]">
+                <h1 id="garageTitle" class="text-[#00ffaa] text-2xl uppercase font-bold font-oswald tracking-widest">Garage</h1>
+                <p class="text-[#8b92a5] text-xs font-bold uppercase tracking-wider mt-1">Available Vehicles</p>
+            </div>
+            <div id="vehicleList" class="flex-1 overflow-y-auto p-2 space-y-2 custom-scroll">
+                <!-- Vehicles injected via JS -->
+            </div>
+        </div>
+
+        <!-- Main Content: Stats & Actions -->
+        <div class="w-2/3 bg-[#1e2025] flex flex-col p-8 relative">
+            <button class="closeBtn absolute top-5 right-5 text-gray-500 hover:text-white transition">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+
+            <div id="emptyState" class="flex-1 flex items-center justify-center text-[#8b92a5] font-oswald text-xl uppercase tracking-widest">
+                Select a Vehicle
+            </div>
+
+            <div id="vehicleDetails" class="hidden h-full flex flex-col justify-between">
+                <div>
+                    <h2 id="vehName" class="text-4xl text-white font-oswald font-bold uppercase tracking-wide">Vehicle Name</h2>
+                    <div class="flex items-center gap-3 mt-2">
+                        <span class="bg-[#2a2c33] text-white px-3 py-1 rounded text-sm font-bold tracking-widest" id="vehPlate">PLATE</span>
+                    </div>
+
+                    <!-- Jam Packed Stats -->
+                    <div class="mt-10 space-y-6">
+                        <div class="stat-row">
+                            <div class="flex justify-between text-sm font-bold text-[#8b92a5] uppercase tracking-wider mb-2">
+                                <span>Engine Health</span> <span id="statEngine">100%</span>
+                            </div>
+                            <div class="w-full bg-[#141518] h-3 rounded overflow-hidden"><div id="barEngine" class="bg-[#00ffaa] h-full" style="width: 100%"></div></div>
+                        </div>
+
+                        <div class="stat-row">
+                            <div class="flex justify-between text-sm font-bold text-[#8b92a5] uppercase tracking-wider mb-2">
+                                <span>Body Health</span> <span id="statBody">100%</span>
+                            </div>
+                            <div class="w-full bg-[#141518] h-3 rounded overflow-hidden"><div id="barBody" class="bg-[#00ffaa] h-full" style="width: 100%"></div></div>
+                        </div>
+                        
+                        <div class="stat-row">
+                            <div class="flex justify-between text-sm font-bold text-[#8b92a5] uppercase tracking-wider mb-2">
+                                <span>Fuel Level</span> <span id="statFuel">100%</span>
+                            </div>
+                            <div class="w-full bg-[#141518] h-3 rounded overflow-hidden"><div id="barFuel" class="bg-[#ffaa00] h-full" style="width: 100%"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="spawnBtn" class="np-btn w-full py-4 text-xl mt-auto">TAKE OUT VEHICLE</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

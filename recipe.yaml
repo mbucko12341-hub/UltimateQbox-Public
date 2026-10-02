@@ -1,0 +1,55 @@
+$engine: 3
+$onesync: on
+
+name: UltimateQbox
+version: 1.0.0
+author: itsBucko
+description: UltimateQbox - Free Qbox FiveM server files with custom scripts, maps, MLOs, jobs and systems.
+
+tasks:
+
+# Download UltimateQbox public repository
+- action: download_github
+  src: https://github.com/YOUR-GITHUB-USERNAME/UltimateQbox
+  ref: main
+  dest: ./tmp/ultimateqbox
+
+# Server configuration
+- action: move_path
+  src: ./tmp/ultimateqbox/server.cfg
+  dest: ./server.cfg
+
+- action: move_path
+  src: ./tmp/ultimateqbox/permissions.cfg
+  dest: ./permissions.cfg
+
+- action: move_path
+  src: ./tmp/ultimateqbox/ox.cfg
+  dest: ./ox.cfg
+
+- action: move_path
+  src: ./tmp/ultimateqbox/voice.cfg
+  dest: ./voice.cfg
+
+- action: move_path
+  src: ./tmp/ultimateqbox/misc.cfg
+  dest: ./misc.cfg
+
+- action: move_path
+  src: ./tmp/ultimateqbox/myLogo.png
+  dest: ./myLogo.png
+
+# Database
+- action: connect_database
+
+- action: query_database
+  file: ./tmp/ultimateqbox/database/ultimateqbox.sql
+
+# Resources
+- action: move_path
+  src: ./tmp/ultimateqbox/resources
+  dest: ./resources
+
+# Clean temporary files
+- action: remove_path
+  path: ./tmp

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Los Santos State Department</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="cityhall-container" class="hidden">
+        <div class="portal-window">
+            <div class="portal-header">
+                <div class="brand-group">
+                    <div class="seal-icon">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                    </div>
+                    <div class="brand-text">
+                        <h1>SAN ANDREAS STATE</h1>
+                        <span>Department of Municipal Records & Civil Services</span>
+                    </div>
+                </div>
+                <div class="header-controls">
+                    <div class="live-clock"><i class="fa-regular fa-clock"></i> <span id="time-display">00:00</span></div>
+                    <button id="close-btn" title="Close Portal"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+
+            <div class="portal-body">
+                <nav class="portal-nav">
+                    <div class="nav-category">Services</div>
+                    <button class="nav-item active" data-tab="documents">
+                        <i class="fa-solid fa-id-card-clip"></i>
+                        <span>Civil Documents</span>
+                        <div class="active-indicator"></div>
+                    </button>
+                    <button class="nav-item" data-tab="jobs">
+                        <i class="fa-solid fa-building-user"></i>
+                        <span>Employment Registry</span>
+                        <div class="active-indicator"></div>
+                    </button>
+                </nav>
+
+                <main class="portal-content">
+                    <!-- Documents Tab -->
+                    <section id="documents-tab" class="content-pane active">
+                        <div class="pane-header">
+                            <h2>Identification & Licensing</h2>
+                            <p>Request official state verification documents. Issued physical credentials are automatically synced to local secure storage.</p>
+                        </div>
+
+                        <div class="grid-cards">
+                            <div class="fancy-card">
+                                <div class="card-glow"></div>
+                                <div class="card-icon-wrapper">
+                                    <i class="fa-solid fa-address-card"></i>
+                                </div>
+                                <div class="card-info">
+                                    <h3>State Identity Card</h3>
+                                    <p>Official legal identification card recognized by law enforcement and municipal entities.</p>
+                                </div>
+                                <button class="fancy-btn" onclick="requestDoc('id_card')">
+                                    <span>Acquire Document</span>
+                                    <i class="fa-solid fa-arrow-right-long"></i>
+                                </button>
+                            </div>
+
+                            <div class="fancy-card">
+                                <div class="card-glow"></div>
+                                <div class="card-icon-wrapper">
+                                    <i class="fa-solid fa-car-side"></i>
+                                </div>
+                                <div class="card-info">
+                                    <h3>Operator License</h3>
+                                    <p>State-certified credentials permitting standard motor vehicle and transit operations.</p>
+                                </div>
+                                <button class="fancy-btn" onclick="requestDoc('drivers_license')">
+                                    <span>Acquire Document</span>
+                                    <i class="fa-solid fa-arrow-right-long"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Jobs Tab (Dynamically Populated) -->
+                    <section id="jobs-tab" class="content-pane">
+                        <div class="pane-header">
+                            <h2>Municipal Employment Bureau</h2>
+                            <p>Register for state-vetted entry level professions or adjust your current professional standing.</p>
+                        </div>
+
+                        <div class="grid-cards" id="jobs-grid-container">
+                            <!-- Injected dynamically via script.js -->
+                        </div>
+                    </section>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

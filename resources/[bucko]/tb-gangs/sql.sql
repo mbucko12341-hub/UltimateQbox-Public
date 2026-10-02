@@ -1,0 +1,38 @@
+CREATE TABLE IF NOT EXISTS `tb_gang_custom` (
+    `gang` VARCHAR(50) NOT NULL PRIMARY KEY,
+    `label` VARCHAR(100) NOT NULL,
+    `color` INT(11) NOT NULL DEFAULT 1,
+    `grades` LONGTEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS `tb_gang_stashes` (
+    `gang` VARCHAR(50) NOT NULL PRIMARY KEY,
+    `coords` LONGTEXT NOT NULL,
+    `heading` FLOAT NOT NULL DEFAULT 0.0,
+    `min_grade` INT(11) NOT NULL DEFAULT 0
+);
+
+CREATE TABLE IF NOT EXISTS `tb_gang_turfs` (
+    `zone_id` VARCHAR(50) NOT NULL PRIMARY KEY,
+    `label` VARCHAR(100) NOT NULL,
+    `coords` LONGTEXT NOT NULL,
+    `radius` FLOAT NOT NULL DEFAULT 110.0,
+    `owner` VARCHAR(50) NOT NULL DEFAULT 'none',
+    `points` INT(11) NOT NULL DEFAULT 100
+);
+
+CREATE TABLE IF NOT EXISTS `tb_gang_sprays` (
+    `id` INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `gang` VARCHAR(50) NOT NULL,
+    `image` VARCHAR(255) NOT NULL,
+    `coords` LONGTEXT NOT NULL,
+    `normal` LONGTEXT NOT NULL,
+    `size` FLOAT NOT NULL DEFAULT 1.8,
+    `zone_id` VARCHAR(50) DEFAULT NULL,
+    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS `tb_gang_rep` (
+    `gang` VARCHAR(50) NOT NULL PRIMARY KEY,
+    `rep` INT(11) NOT NULL DEFAULT 0
+);
