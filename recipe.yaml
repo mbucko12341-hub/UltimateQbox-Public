@@ -13,6 +13,7 @@ tasks:
   src: https://github.com/mbucko12341-hub/UltimateQbox-Public
   ref: main
   dest: ./tmp/ultimateqbox
+  timeoutSeconds: 600
 
 # Server configuration
 - action: move_path
