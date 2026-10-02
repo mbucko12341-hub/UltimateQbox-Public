@@ -10,7 +10,7 @@ tasks:
 
 # Download UltimateQbox public repository
 - action: download_github
-  src: https://github.com/YOUR-GITHUB-USERNAME/UltimateQbox
+  src: https://github.com/mbucko12341-hub/UltimateQbox-Public
   ref: main
   dest: ./tmp/ultimateqbox
 
