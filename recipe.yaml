@@ -9,46 +9,50 @@ description: UltimateQbox - Free Qbox FiveM server files with custom scripts, ma
 tasks:
 
 # Download UltimateQbox public repository
-- action: download_github
-  src: https://github.com/mbucko12341-hub/UltimateQbox-Public
-  ref: main
-  dest: ./tmp/ultimateqbox
+- action: download_file
+  url: https://github.com/mbucko12341-hub/UltimateQbox-Public/archive/refs/heads/main.zip
+  path: ./tmp/ultimateqbox.zip
   timeoutSeconds: 600
+
+# Extract repository
+- action: unzip
+  src: ./tmp/ultimateqbox.zip
+  dest: ./tmp
 
 # Server configuration
 - action: move_path
-  src: ./tmp/ultimateqbox/server.cfg
+  src: ./tmp/UltimateQbox-Public-main/server.cfg
   dest: ./server.cfg
 
 - action: move_path
-  src: ./tmp/ultimateqbox/permissions.cfg
+  src: ./tmp/UltimateQbox-Public-main/permissions.cfg
   dest: ./permissions.cfg
 
 - action: move_path
-  src: ./tmp/ultimateqbox/ox.cfg
+  src: ./tmp/UltimateQbox-Public-main/ox.cfg
   dest: ./ox.cfg
 
 - action: move_path
-  src: ./tmp/ultimateqbox/voice.cfg
+  src: ./tmp/UltimateQbox-Public-main/voice.cfg
   dest: ./voice.cfg
 
 - action: move_path
-  src: ./tmp/ultimateqbox/misc.cfg
+  src: ./tmp/UltimateQbox-Public-main/misc.cfg
   dest: ./misc.cfg
 
 - action: move_path
-  src: ./tmp/ultimateqbox/myLogo.png
+  src: ./tmp/UltimateQbox-Public-main/myLogo.png
   dest: ./myLogo.png
 
 # Database
 - action: connect_database
 
 - action: query_database
-  file: ./tmp/ultimateqbox/database/ultimateqbox.sql
+  file: ./tmp/UltimateQbox-Public-main/database/ultimateqbox.sql
 
 # Resources
 - action: move_path
-  src: ./tmp/ultimateqbox/resources
+  src: ./tmp/UltimateQbox-Public-main/resources
   dest: ./resources
 
 # Clean temporary files
