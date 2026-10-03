@@ -1,4 +1,6 @@
 
+SET FOREIGN_KEY_CHECKS=0;
+
 -- Dumping structure for table qbox_bec08f.bank_accounts_new
 CREATE TABLE IF NOT EXISTS `bank_accounts_new` (
   `id` varchar(50) NOT NULL,
@@ -2632,6 +2634,8 @@ CREATE TABLE IF NOT EXISTS `xt_prison_items` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Data exporting was unselected.
+
+SET FOREIGN_KEY_CHECKS=1;
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
