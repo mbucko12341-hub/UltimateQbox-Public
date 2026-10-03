@@ -1,1 +1,0 @@
-var e=``+new URL(`background3-B3pyQmwu.webp`,import.meta.url).href;export{e as t};

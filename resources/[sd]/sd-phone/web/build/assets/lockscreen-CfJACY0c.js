@@ -1,1 +1,0 @@
-var e=``+new URL(`homescreen-B_XZNEOR.webp`,import.meta.url).href,t=``+new URL(`lockscreen-BF1HuhRM.webp`,import.meta.url).href;export{e as n,t};
