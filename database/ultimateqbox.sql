@@ -1,4 +1,21 @@
+-- --------------------------------------------------------
+-- Host:                         127.0.0.1
+-- Server version:               12.3.3-MariaDB - MariaDB Server
+-- Server OS:                    Win64
+-- HeidiSQL Version:             12.20.0.7320
+-- --------------------------------------------------------
 
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+
+-- Dumping database structure for qbox_bec08f
 SET FOREIGN_KEY_CHECKS=0;
 
 -- Dumping structure for table qbox_bec08f.bank_accounts_new
@@ -2634,8 +2651,6 @@ CREATE TABLE IF NOT EXISTS `xt_prison_items` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Data exporting was unselected.
-
-SET FOREIGN_KEY_CHECKS=1;
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
