@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheBox RP | Loading</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-grid"></div>
+    <div class="noise"></div>
+    <div class="glow glow-a"></div>
+    <div class="glow glow-b"></div>
+
+    <header class="topbar">
+        <div class="brand-mini">
+            <span class="status-dot"></span>
+            <span>THEBOX RP</span>
+            <small>QBOX FRAMEWORK</small>
+        </div>
+        <div class="top-actions">
+            <div class="music-control">
+                <button id="musicBtn" class="icon-btn" title="Music">♫ <span>Music</span></button>
+                <button id="prevTrackBtn" class="music-skip" title="Previous track">◀</button>
+                <button id="nextTrackBtn" class="music-skip" title="Next track">▶</button>
+                <div class="volume-wrap" title="Music volume">
+                    <span>VOL</span>
+                    <input id="volumeSlider" type="range" min="0" max="100" value="35" aria-label="Music volume">
+                </div>
+                <span id="trackName" class="track-name">Music Off</span>
+            </div>
+            <button id="fullscreenBtn" class="icon-btn" title="Fullscreen">⛶ <span>Fullscreen</span></button>
+        </div>
+    </header>
+
+    <main class="shell">
+        <section class="hero">
+            <div class="hero-copy">
+                <div class="eyebrow"><span></span> CONNECTING TO THE CITY</div>
+                <h1>WELCOME TO<br><strong>THE<span>BOX</span></strong></h1>
+                <p class="lead">A custom Qbox roleplay experience built around a living city, player-driven stories and a constantly evolving world.</p>
+
+                <div class="loader-card">
+                    <div class="loader-head">
+                        <div>
+                            <span class="muted">CURRENT STATUS</span>
+                            <strong id="statusText">Preparing your connection...</strong>
+                        </div>
+                        <b id="percent">0%</b>
+                    </div>
+                    <div class="progress-track"><div id="progressBar" class="progress-bar"></div></div>
+                    <div class="loader-foot">
+                        <span id="tipText">Tip: Read the rules before starting your first shift.</span>
+                        <span class="pulse"><i></i> ONLINE</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="logo-wrap">
+                <div class="logo-ring"></div>
+                <img src="assets/logo.png" alt="TheBox Logo" class="logo">
+                <div class="logo-caption">EST. 2026 · THE CITY IS YOURS</div>
+            </div>
+        </section>
+
+        <nav class="tabs" aria-label="Loading screen information">
+            <button class="tab active" data-tab="overview">Overview</button>
+            <button class="tab" data-tab="features">Features</button>
+            <button class="tab" data-tab="jobs">Jobs & Economy</button>
+            <button class="tab" data-tab="rules">Rules</button>
+            <button class="tab" data-tab="controls">Controls</button>
+            <button class="tab" data-tab="staff">Staff</button>
+            <button class="tab" data-tab="updates">Updates</button>
+            <button class="tab" data-tab="discord">Discord</button>
+        </nav>
+
+        <section class="content-area">
+            <div id="overview" class="panel active-panel">
+                <div class="section-title"><span>01</span><div><small>THE CITY</small><h2>Start your story</h2></div></div>
+                <div class="cards three">
+                    <article class="info-card accent"><div class="card-icon">◆</div><h3>Build Your Life</h3><p>Choose your path, earn money, buy vehicles, meet people and create a character with a story worth remembering.</p></article>
+                    <article class="info-card"><div class="card-icon">⌁</div><h3>Player Driven</h3><p>Businesses, emergency services, criminal opportunities and everyday jobs all connect to one living economy.</p></article>
+                    <article class="info-card"><div class="card-icon">✦</div><h3>Custom Experience</h3><p>TheBox is designed around custom maps, systems and quality-of-life features rather than a pile of generic scripts.</p></article>
+                </div>
+                <div class="quick-grid">
+                    <div><span>FRAMEWORK</span><b>QBOX</b></div><div><span>STYLE</span><b>REALISTIC RP</b></div><div><span>ECONOMY</span><b>PLAYER DRIVEN</b></div><div><span>COMMUNITY</span><b>THEBOX</b></div>
+                </div>
+            </div>
+
+            <div id="features" class="panel">
+                <div class="section-title"><span>02</span><div><small>WHAT'S INSIDE</small><h2>Built for roleplay</h2></div></div>
+                <div class="feature-list">
+                    <div class="feature"><b>01</b><div><h3>Custom Vehicles</h3><p>Cars, bikes, emergency vehicles and more, with a growing catalogue.</p></div><span>VEHICLES</span></div>
+                    <div class="feature"><b>02</b><div><h3>Businesses</h3><p>Work your way up from employee to owner and create your own reputation.</p></div><span>ECONOMY</span></div>
+                    <div class="feature"><b>03</b><div><h3>Emergency Services</h3><p>Police, EMS and other services with structured roleplay and progression.</p></div><span>PUBLIC</span></div>
+                    <div class="feature"><b>04</b><div><h3>Criminal Life</h3><p>High-risk opportunities, street deals and underground stories for those who choose that path.</p></div><span>CRIME</span></div>
+                    <div class="feature"><b>05</b><div><h3>Custom Maps & MLOs</h3><p>Purpose-built locations to make the city feel different and give players places to create stories.</p></div><span>WORLD</span></div>
+                    <div class="feature"><b>06</b><div><h3>Regular Updates</h3><p>New systems, locations, vehicles and improvements as the server grows.</p></div><span>LIVE</span></div>
+                </div>
+            </div>
+
+            <div id="jobs" class="panel">
+                <div class="section-title"><span>03</span><div><small>MAKE YOUR MONEY</small><h2>Jobs & Economy</h2></div></div>
+                <div class="cards three">
+                    <article class="info-card"><h3>Legal Work</h3><p>Delivery, transport, maintenance, food, construction and other ways to build a legitimate income.</p><div class="tag">LOW RISK</div></article>
+                    <article class="info-card accent"><h3>Business</h3><p>Work for established businesses or work towards owning your own place in the city.</p><div class="tag">BUILD UP</div></article>
+                    <article class="info-card"><h3>Underground</h3><p>For players who want risk and reward, the city has opportunities away from the legal economy.</p><div class="tag">HIGH RISK</div></article>
+                </div>
+                <div class="notice"><b>ECONOMY TIP</b><span>Don't rush the grind. Build a reputation, meet people and let your character's story develop naturally.</span></div>
+            </div>
+
+            <div id="rules" class="panel">
+                <div class="section-title"><span>04</span><div><small>KEEP IT FAIR</small><h2>Server Rules</h2></div></div>
+                <div class="rules-grid">
+                    <div class="rule"><b>01</b><h3>Respect</h3><p>Treat other players and staff with respect. No harassment, discrimination or targeted abuse.</p></div>
+                    <div class="rule"><b>02</b><h3>Stay In Character</h3><p>Keep roleplay immersive. Avoid breaking character without a genuine reason.</p></div>
+                    <div class="rule"><b>03</b><h3>No Metagaming</h3><p>Don't use information your character could not reasonably know.</p></div>
+                    <div class="rule"><b>04</b><h3>No Powergaming</h3><p>Give other players a fair chance to react. Don't force outcomes on someone else's character.</p></div>
+                    <div class="rule"><b>05</b><h3>Value Your Life</h3><p>Danger should matter. React realistically when your character is threatened.</p></div>
+                    <div class="rule"><b>06</b><h3>Follow Staff Direction</h3><p>If staff are handling an active issue, follow their instructions and use the correct report process.</p></div>
+                </div>
+                <p class="fineprint">These are loading-screen highlights. Always check the current full rules in Discord, as rules may change.</p>
+            </div>
+
+            <div id="controls" class="panel">
+                <div class="section-title"><span>05</span><div><small>QUICK REFERENCE</small><h2>Controls</h2></div></div>
+                <div class="controls-grid">
+                    <div class="keyrow"><kbd>F1</kbd><span>Player / interaction menu</span></div>
+                    <div class="keyrow"><kbd>F2</kbd><span>Inventory / character menu</span></div>
+                    <div class="keyrow"><kbd>F3</kbd><span>Job / utility menu</span></div>
+                    <div class="keyrow"><kbd>F6</kbd><span>Job actions (where available)</span></div>
+                    <div class="keyrow"><kbd>M</kbd><span>Vehicle / player menu</span></div>
+                    <div class="keyrow"><kbd>G</kbd><span>Vehicle / interaction action</span></div>
+                    <div class="keyrow"><kbd>ESC</kbd><span>Close menus</span></div>
+                    <div class="keyrow"><kbd>V</kbd><span>Push-to-talk (if configured)</span></div>
+                </div>
+                <p class="fineprint">Controls can be changed by server configuration and may differ by job or resource.</p>
+            </div>
+
+            <div id="staff" class="panel">
+                <div class="section-title"><span>06</span><div><small>COMMUNITY TEAM</small><h2>Staff & Support</h2></div></div>
+                <div class="staff-box"><div class="staff-mark">TB</div><div><h3>Need help?</h3><p>For reports, questions, bugs or player support, use the appropriate channel in TheBox Discord. Please include screenshots or clips where useful.</p></div></div>
+                <div class="support-grid"><div><span>PLAYER REPORTS</span><b>OPEN A TICKET</b></div><div><span>BUG REPORTS</span><b>PROVIDE DETAILS</b></div><div><span>APPEALS</span><b>USE THE APPEAL CHANNEL</b></div></div>
+            </div>
+
+            <div id="updates" class="panel">
+                <div class="section-title"><span>07</span><div><small>WHAT'S NEW</small><h2>Server Updates</h2></div></div>
+                <div class="timeline">
+                    <div class="update"><span>01</span><div><small>THEBOX LAUNCH</small><h3>Qbox foundation</h3><p>Core server systems, character progression and the base city experience.</p></div></div>
+                    <div class="update"><span>02</span><div><small>COMING SOON</small><h3>More custom content</h3><p>New locations, vehicles, jobs and quality-of-life systems will be added as development continues.</p></div></div>
+                    <div class="update"><span>03</span><div><small>COMMUNITY</small><h3>Your ideas matter</h3><p>Join the Discord to suggest features and help shape the direction of the city.</p></div></div>
+                </div>
+            </div>
+
+            <div id="discord" class="panel">
+                <div class="section-title"><span>08</span><div><small>JOIN THE COMMUNITY</small><h2>TheBox Discord</h2></div></div>
+                <div class="discord-card"><div class="discord-symbol">◎</div><div><h3>Stay connected outside the city</h3><p>Announcements, support, changelogs, server information and community discussions all live in Discord.</p><div class="discord-code">DISCORD.GG / THEBOX</div></div><button id="copyDiscord" class="primary-btn">COPY INVITE</button></div>
+                <p id="copyStatus" class="copy-status">Invite placeholder: change the Discord invite in <b>script.js</b>.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer"><span>THEBOX RP</span><span>QBOX • CUSTOM CONTENT • COMMUNITY RP</span><span id="clock">00:00:00</span></footer>
+
+    <audio id="music" preload="auto"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
