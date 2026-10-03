@@ -8,54 +8,139 @@ description: UltimateQbox - Free Qbox FiveM server files with custom scripts, ma
 
 tasks:
 
-# Download UltimateQbox public repository
+# Resource packages
 - action: download_file
-  url: https://github.com/mbucko12341-hub/UltimateQbox-Public/archive/refs/heads/main.zip
-  path: ./tmp/ultimateqbox.zip
-  timeoutSeconds: 600
+  url: https://raw.githubusercontent.com/mbucko12341-hub/UltimateQbox-Public/main/%5Bassets%5D.zip
+  path: ./tmp/assets.zip
+  timeoutSeconds: 300
 
-# Extract repository
 - action: unzip
-  src: ./tmp/ultimateqbox.zip
-  dest: ./tmp
-  timeoutSeconds: 1200
+  src: ./tmp/assets.zip
+  dest: ./resources
+  timeoutSeconds: 300
+
+- action: download_file
+  url: https://raw.githubusercontent.com/mbucko12341-hub/UltimateQbox-Public/main/%5Bbucko%5D.zip
+  path: ./tmp/bucko.zip
+  timeoutSeconds: 300
+
+- action: unzip
+  src: ./tmp/bucko.zip
+  dest: ./resources
+  timeoutSeconds: 300
+
+- action: download_file
+  url: https://raw.githubusercontent.com/mbucko12341-hub/UltimateQbox-Public/main/%5Bcfx-default%5D.zip
+  path: ./tmp/cfx-default.zip
+  timeoutSeconds: 300
+
+- action: unzip
+  src: ./tmp/cfx-default.zip
+  dest: ./resources
+  timeoutSeconds: 300
+
+- action: download_file
+  url: https://raw.githubusercontent.com/mbucko12341-hub/UltimateQbox-Public/main/%5Box%5D.zip
+  path: ./tmp/ox.zip
+  timeoutSeconds: 300
+
+- action: unzip
+  src: ./tmp/ox.zip
+  dest: ./resources
+  timeoutSeconds: 300
+
+- action: download_file
+  url: https://raw.githubusercontent.com/mbucko12341-hub/UltimateQbox-Public/main/%5Bps%5D.zip
+  path: ./tmp/ps.zip
+  timeoutSeconds: 300
+
+- action: unzip
+  src: ./tmp/ps.zip
+  dest: ./resources
+  timeoutSeconds: 300
+
+- action: download_file
+  url: https://raw.githubusercontent.com/mbucko12341-hub/UltimateQbox-Public/main/%5Bqbx%5D.zip
+  path: ./tmp/qbx.zip
+  timeoutSeconds: 300
+
+- action: unzip
+  src: ./tmp/qbx.zip
+  dest: ./resources
+  timeoutSeconds: 300
+
+- action: download_file
+  url: https://raw.githubusercontent.com/mbucko12341-hub/UltimateQbox-Public/main/%5Bsd%5D.zip
+  path: ./tmp/sd.zip
+  timeoutSeconds: 300
+
+- action: unzip
+  src: ./tmp/sd.zip
+  dest: ./resources
+  timeoutSeconds: 300
+
+- action: download_file
+  url: https://raw.githubusercontent.com/mbucko12341-hub/UltimateQbox-Public/main/%5Bstandalone%5D.zip
+  path: ./tmp/standalone.zip
+  timeoutSeconds: 300
+
+- action: unzip
+  src: ./tmp/standalone.zip
+  dest: ./resources
+  timeoutSeconds: 300
+
+- action: download_file
+  url: https://raw.githubusercontent.com/mbucko12341-hub/UltimateQbox-Public/main/%5Bvoice%5D.zip
+  path: ./tmp/voice.zip
+  timeoutSeconds: 300
+
+- action: unzip
+  src: ./tmp/voice.zip
+  dest: ./resources
+  timeoutSeconds: 300
 
 # Server configuration
-- action: move_path
-  src: ./tmp/UltimateQbox-Public-main/server.cfg
-  dest: ./server.cfg
+- action: download_file
+  url: https://raw.githubusercontent.com/mbucko12341-hub/UltimateQbox-Public/main/server.cfg
+  path: ./server.cfg
+  timeoutSeconds: 120
 
-- action: move_path
-  src: ./tmp/UltimateQbox-Public-main/permissions.cfg
-  dest: ./permissions.cfg
+- action: download_file
+  url: https://raw.githubusercontent.com/mbucko12341-hub/UltimateQbox-Public/main/permissions.cfg
+  path: ./permissions.cfg
+  timeoutSeconds: 120
 
-- action: move_path
-  src: ./tmp/UltimateQbox-Public-main/ox.cfg
-  dest: ./ox.cfg
+- action: download_file
+  url: https://raw.githubusercontent.com/mbucko12341-hub/UltimateQbox-Public/main/ox.cfg
+  path: ./ox.cfg
+  timeoutSeconds: 120
 
-- action: move_path
-  src: ./tmp/UltimateQbox-Public-main/voice.cfg
-  dest: ./voice.cfg
+- action: download_file
+  url: https://raw.githubusercontent.com/mbucko12341-hub/UltimateQbox-Public/main/voice.cfg
+  path: ./voice.cfg
+  timeoutSeconds: 120
 
-- action: move_path
-  src: ./tmp/UltimateQbox-Public-main/misc.cfg
-  dest: ./misc.cfg
+- action: download_file
+  url: https://raw.githubusercontent.com/mbucko12341-hub/UltimateQbox-Public/main/misc.cfg
+  path: ./misc.cfg
+  timeoutSeconds: 120
 
-- action: move_path
-  src: ./tmp/UltimateQbox-Public-main/myLogo.png
-  dest: ./myLogo.png
+- action: download_file
+  url: https://raw.githubusercontent.com/mbucko12341-hub/UltimateQbox-Public/main/myLogo.png
+  path: ./myLogo.png
+  timeoutSeconds: 120
 
 # Database
 - action: connect_database
 
+- action: download_file
+  url: https://raw.githubusercontent.com/mbucko12341-hub/UltimateQbox-Public/main/database/ultimateqbox.sql
+  path: ./tmp/ultimateqbox.sql
+  timeoutSeconds: 120
+
 - action: query_database
-  file: ./tmp/UltimateQbox-Public-main/database/ultimateqbox.sql
+  file: ./tmp/ultimateqbox.sql
 
-# Resources
-- action: move_path
-  src: ./tmp/UltimateQbox-Public-main/resources
-  dest: ./resources
-
-# Clean temporary files
+# Cleanup
 - action: remove_path
   path: ./tmp
