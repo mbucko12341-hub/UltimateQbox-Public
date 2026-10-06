@@ -130,16 +130,6 @@ tasks:
   path: ./myLogo.png
   timeoutSeconds: 120
 
-# Database
-- action: connect_database
-
-- action: download_file
-  url: https://raw.githubusercontent.com/mbucko12341-hub/UltimateQbox-Public/main/database/ultimateqbox.sql
-  path: ./tmp/ultimateqbox.sql
-  timeoutSeconds: 120
-
-- action: query_database
-  file: ./tmp/ultimateqbox.sql
 
 # Cleanup
 - action: remove_path
